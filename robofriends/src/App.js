@@ -14,7 +14,12 @@ class App extends Component {
 //
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
-    this.setState({robots: robots});
+      .then(response =>{
+        return response.json();
+      })
+      .then(users =>{
+        this.setState({robots: users});
+      })
   }
 
   //On search function
