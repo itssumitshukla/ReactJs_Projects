@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Cardlist from './Cardlist';
 import Searchbox from './Searchbox';
 import Scroll from './Scroll';
+import ErrorBoundry from './ErrorBoundry';
 
 class App extends Component {
   constructor(){
