@@ -14,6 +14,9 @@ class App extends Component {
     super(props);
     this.particlesInit = this.particlesInit.bind(this);
     this.particlesLoaded = this.particlesLoaded.bind(this);
+    this.state = {
+      input: ''
+    }
   }
   particlesInit(main) {
     console.log(main);
@@ -21,6 +24,14 @@ class App extends Component {
   }
   particlesLoaded(container) {
     console.log(container);
+  }
+
+  onInputChange = (event)=> {
+    console.log(event.target.value)
+  }
+
+  onButtonSubmit = ()=> {
+    console.log('click')
   }
 
   render() {
@@ -107,7 +118,7 @@ class App extends Component {
         />
         <Navigation />
         <Logo />
-        <ImageLinkForm />
+        <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
         <Rank />
       </div>
     );
