@@ -1,21 +1,27 @@
 import React, {Component} from 'react';
 import Particles from "react-tsparticles";
+import Clarifai from 'clarifai';
 import Navigation from './components/navigation/Navigation';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
 import 'tachyons';
 
-
+//Clarifai API
+let app = new Clarifai.App(
+  {apiKey: '9a819578268145baa8999d456553a9e9'}
+  );
 
 class App extends Component {  
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.particlesInit = this.particlesInit.bind(this);
     this.particlesLoaded = this.particlesLoaded.bind(this);
     this.state = {
-      input: ''
+      input: '',
+      imageUrl:''
     }
   }
   particlesInit(main) {
@@ -27,11 +33,25 @@ class App extends Component {
   }
 
   onInputChange = (event)=> {
+    this.setState({input : event.target.value});
     console.log(event.target.value)
   }
 
   onButtonSubmit = ()=> {
-    console.log('click')
+    console.log("click");
+    this.setState({imageUrl: this.state.input});
+    app.models
+      .predict(
+        'a403429f2ddf4b49b307e318f00e528b', 'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg')
+      .then(
+        function (response) {
+          // do something with response
+          console.log(response)
+        },
+        function (err) {
+          // there was an error
+        }
+      );
   }
 
   render() {
@@ -120,6 +140,7 @@ class App extends Component {
         <Logo />
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
         <Rank />
+        <FaceRecognition imageUrl={this.state.imageUrl}/>
       </div>
     );
   }
