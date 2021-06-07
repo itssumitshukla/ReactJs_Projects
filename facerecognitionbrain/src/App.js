@@ -45,11 +45,11 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
     app.models
       .predict(
-        'f76196b43bbd45c99b4f3cd8e8b40a8a', 'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg')
+        'f76196b43bbd45c99b4f3cd8e8b40a8a', this.state.input)
       .then(
         function (response) {
           // do something with response
-          console.log(response)
+          console.log(response.outputs[0].data.regions[0].region_info.bounding_box)
         },
         function (err) {
           // there was an error
