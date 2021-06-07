@@ -21,7 +21,10 @@ class App extends Component {
     this.particlesLoaded = this.particlesLoaded.bind(this);
     this.state = {
       input: '',
-      imageUrl:''
+      imageUrl:'',
+      box: {},
+      route: 'signin',
+      isSignedIn: false
     }
   }
   particlesInit(main) {
@@ -42,7 +45,7 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
     app.models
       .predict(
-        'a403429f2ddf4b49b307e318f00e528b', 'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg')
+        'f76196b43bbd45c99b4f3cd8e8b40a8a', 'https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg')
       .then(
         function (response) {
           // do something with response
