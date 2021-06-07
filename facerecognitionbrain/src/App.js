@@ -162,7 +162,7 @@ class App extends Component {
           onButtonSubmit={this.onButtonSubmit}
         />
         <Rank />
-        <FaceRecognition imageUrl={this.state.imageUrl} />
+        <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
       </div>
     );
   }
