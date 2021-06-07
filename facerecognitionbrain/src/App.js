@@ -14,18 +14,18 @@ let app = new Clarifai.App(
   {apiKey: '9a819578268145baa8999d456553a9e9'}
   );
 
-class App extends Component {  
+class App extends Component {
   constructor() {
     super();
     this.particlesInit = this.particlesInit.bind(this);
     this.particlesLoaded = this.particlesLoaded.bind(this);
     this.state = {
       input: '',
-      imageUrl:'',
+      imageUrl: '',
       box: {},
       route: 'signin',
-      isSignedIn: false
-    }
+      isSignedIn: false,
+    };
   }
   particlesInit(main) {
     console.log(main);
@@ -35,27 +35,35 @@ class App extends Component {
     console.log(container);
   }
 
-  onInputChange = (event)=> {
-    this.setState({input : event.target.value});
-    console.log(event.target.value)
-  }
+  calculateFaceLocation = (data) => {
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const image = document.getElementById('inputimage');
+    const width = Number(image.width);
+    const height = Number(image.height);
+    return {
 
-  onButtonSubmit = ()=> {
-    console.log("click");
-    this.setState({imageUrl: this.state.input});
+    }
+  };
+
+  onInputChange = (event) => {
+    this.setState({ input: event.target.value });
+    console.log(event.target.value);
+  };
+
+  onButtonSubmit = () => {
+    console.log('click');
+    this.setState({ imageUrl: this.state.input });
     app.models
-      .predict(
-        'f76196b43bbd45c99b4f3cd8e8b40a8a', this.state.input)
-      .then(
-        function (response) {
-          // do something with response
-          console.log(response.outputs[0].data.regions[0].region_info.bounding_box)
-        },
-        function (err) {
-          // there was an error
-        }
-      );
-  }
+      .predict('f76196b43bbd45c99b4f3cd8e8b40a8a', this.state.input)
+      .then((response) => {
+        // do something with response
+        console.log(
+          response.outputs[0].data.regions[0].region_info.bounding_box
+        );
+        this.calculateFaceLocation(response);
+      })
+      .catch((err) => console.log(err));
+  };
 
   render() {
     return (
@@ -141,9 +149,12 @@ class App extends Component {
         />
         <Navigation />
         <Logo />
-        <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
+        <ImageLinkForm
+          onInputChange={this.onInputChange}
+          onButtonSubmit={this.onButtonSubmit}
+        />
         <Rank />
-        <FaceRecognition imageUrl={this.state.imageUrl}/>
+        <FaceRecognition imageUrl={this.state.imageUrl} />
       </div>
     );
   }
