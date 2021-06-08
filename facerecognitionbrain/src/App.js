@@ -156,17 +156,20 @@ class App extends Component {
             detectRetina: true,
           }}
         />
-        
         <Navigation />
-                <SignIn />
+        
+        { this.state.route === 'signin'
+        ? <SignIn />
+        : <div>
         <Logo />
+        <Rank />
         <ImageLinkForm
           onInputChange={this.onInputChange}
           onButtonSubmit={this.onButtonSubmit}
         />
-        <Rank />
         <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
-
+        </div> 
+        }
       </div>
     );
   }
