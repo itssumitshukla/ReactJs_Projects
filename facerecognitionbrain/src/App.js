@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Particles from "react-tsparticles";
 import Clarifai from 'clarifai';
 import Navigation from './components/navigation/Navigation';
+import SignIn from './components/SignIn/SignIn';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
@@ -155,7 +156,9 @@ class App extends Component {
             detectRetina: true,
           }}
         />
+        
         <Navigation />
+                <SignIn />
         <Logo />
         <ImageLinkForm
           onInputChange={this.onInputChange}
@@ -163,6 +166,7 @@ class App extends Component {
         />
         <Rank />
         <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
+
       </div>
     );
   }
