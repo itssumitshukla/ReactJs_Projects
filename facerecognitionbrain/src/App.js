@@ -74,6 +74,10 @@ class App extends Component {
       .catch((err) => console.log(err));
   };
 
+  onRouteChange = (route)=>{
+    this.setState({route:route});
+  }
+
   render() {
     return (
       <div className="App">
@@ -156,10 +160,9 @@ class App extends Component {
             detectRetina: true,
           }}
         />
-        <Navigation />
-        
+        <Navigation onRouteChange={this.onRouteChange}/>
         { this.state.route === 'signin'
-        ? <SignIn />
+        ? <SignIn onRouteChange={this.onRouteChange} />
         : <div>
         <Logo />
         <Rank />
