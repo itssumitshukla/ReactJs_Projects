@@ -30,11 +30,9 @@ class App extends Component {
     };
   }
   particlesInit(main) {
-    console.log(main);
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
   }
   particlesLoaded(container) {
-    console.log(container);
   }
 
   calculateFaceLocation = (data) => {
@@ -76,6 +74,11 @@ class App extends Component {
   };
 
   onRouteChange = (route)=>{
+    if(route === 'signout'){
+      this.setState({isSignedIn: false})
+    } else if (route === 'home') {
+      this.setState({isSignedIn: true})
+    }
     this.setState({route:route});
   }
 
@@ -161,7 +164,7 @@ class App extends Component {
             detectRetina: true,
           }}
         />
-        <Navigation onRouteChange={this.onRouteChange}/>
+        <Navigation isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange}/>
         { this.state.route === 'home'
         ? <div>
         <Logo />
