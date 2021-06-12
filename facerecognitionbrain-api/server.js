@@ -25,18 +25,33 @@ const database = {
 };
 
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send(database.users)
 })
 
+//User signing in
 app.post('/signin', (req, res) => {
   if((req.body.email === database.users[0].email)
-    && req.body.password === database.users[0].password
+    //&& req.body.password === database.users[0].password
   ){
     res.json('Success')
   } else {
     res.status(400).json('Error Logging in')
   }
-  // res.json('Signed in')
+  res.json('Signed in')
+});
+
+//register a new user
+app.post('/register', (req, res)=> {
+  const  {email, name, password} = req.body
+  database.users.push({
+    id: '125',
+    name: name,
+    email: email,
+    password: password,
+    entries : 0,
+    joined: new Date()
+  });
+  res.json(database.users[database.users.length - 1])
 });
  
 app.listen(3000, ()=> {
