@@ -44,8 +44,7 @@ loadUser = (data)=>{
         email:  data.email,
         entries :  data.entries,
         joined:  data.joined
-    }}
-  )
+    }})
 }
 
   // componentDidMount(){
@@ -74,13 +73,11 @@ loadUser = (data)=>{
   };
 
   displayFaceBox = (box) => {
-    console.log(box)
     this.setState({box: box});
   }
 
   onInputChange = (event) => {
     this.setState({ input: event.target.value });
-    console.log(event.target.value);
   };
 
   onButtonSubmit = () => {
@@ -100,9 +97,7 @@ loadUser = (data)=>{
           })
           .then(response =>{response.json()})
           .then(count => {
-            this.setState({users: {
-              entries: count
-            }})
+            this.setState(Object.assign(this.state.user, { entries: count}))
           })
         }
         this.displayFaceBox(this.calculateFaceLocation(response));
