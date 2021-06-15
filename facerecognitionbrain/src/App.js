@@ -90,9 +90,21 @@ loadUser = (data)=>{
       .predict('f76196b43bbd45c99b4f3cd8e8b40a8a', this.state.input)
       .then((response) => {
         // do something with response
-        console.log(
-          response.outputs[0].data.regions[0].region_info.bounding_box
-        );
+        if(response){
+          fetch('http://localhost:3000/image', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              id: this.state.user.id
+            })
+          })
+          .then(response =>{response.json()})
+          .then(count => {
+            this.setState({users: {
+              entries: count
+            }})
+          })
+        }
         this.displayFaceBox(this.calculateFaceLocation(response));
       })
       .catch((err) => console.log(err));
