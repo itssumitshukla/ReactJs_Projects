@@ -30,11 +30,11 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
-    fetch('http://localhost:3000')
-    .then(response => response.json())
-    .then(console.log)
-  }
+  // componentDidMount(){
+  //   fetch('http://localhost:3000')
+  //   .then(response => response.json())
+  //   .then(console.log)
+  // }
 
   particlesInit(main) {
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
