@@ -5,7 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Pokecard/>
+      <Pokecard
+        id={4}
+        name="Sumit"
+      />
     </div>
   );
 }
