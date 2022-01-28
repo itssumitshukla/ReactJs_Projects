@@ -1,17 +1,25 @@
-import React, {Component} from 'react';
-import './Pokecard.css';
-const POKE_API = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-
+import React, { Component } from 'react'
+import './Pokecard.css'
+ 
+const POKE_API = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+ 
 class Pokecard extends Component {
-  render(){
-    let imgSrc = `${POKE_API}${this.props.id}.png`;
+  render() {
+    console.log(this.props.data)
+    let data = this.props.data
+    
     return (
-      <div className='Pokecard'>
-          <h1>{this.props.name}</h1>
-          <img src={imgSrc} alt={this.props.name}/>
-      </div>
+        data.map(n => 
+          <div className='Pokecard'>
+            <h1>{n.name}</h1>
+            <img src={`${POKE_API}${n.id}.png`} alt={n.name} />
+            <div>{n.type}</div>
+            <div>{n.base_experience}</div>
+          </div>
+        )
+ 
     )
   }
-};
-
-export default Pokecard;
+}
+ 
+export default Pokecard
