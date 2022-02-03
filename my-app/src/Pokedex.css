@@ -1,5 +1,83 @@
-.Pokedex-cards{
+.Pokedex-cards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex: 3;
+  width: 300px;
+  margin: 70px 5%;
+  padding: 10px 10px 0;
+  box-shadow: 7px 10px 15px -5px rgba(0, 0, 0, 0.8);
+  background-image: url("https://images.unsplash.com/photo-1482977036925-e8fcaa643657?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60");
+  border-radius: 1em;
+  animation: appear 3s ease-in;
+}
+.caption {
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 2em;
+  letter-spacing: 0.4em;
+  animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+  0% {
+    filter: grayscale(100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Pokedex {
+  background-color: #852a1e;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
   flex-wrap: wrap;
+}
+
+.Pokedex-header {
+  background: black;
+  margin-bottom: 50px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.header {
+  color: white;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin: 2em;
+  transition: letter-spacing 3s ease;
+  letter-spacing: 0;
+  animation: move 4s ease-in forwards;
+}
+
+@keyframes move {
+  0% {
+    letter-spacing: -5em;
+    opacity: 0;
+  }
+  50% {
+    letter-spacing: 1.5em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 1em;
+    opacity: 1;
+  }
+}
+
+.winner-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  color: white;
+  margin-top: 50px;
+  animation: appear 10s ease;
 }

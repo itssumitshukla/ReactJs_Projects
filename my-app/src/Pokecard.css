@@ -1,10 +1,10 @@
-.Pokecard{
-  border: 2px solid red;
-  width: 300px;
-  padding: 10px;
-  margin: 1rem;
-  box-shadow: 7px 10px 12px -5px rgba(0, 0,0,0.56);
-  text-align: center;
-  background-color: white;
-  border-radius: 3px;
+img {
+  width: 200px;
+}
+
+.Pokecard-data {
+  font-size: 80%;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.4rem;
 }

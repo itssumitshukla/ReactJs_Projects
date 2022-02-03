@@ -1,14 +1,15 @@
-import React, {Component} from 'react';
-import Pokedex from './Pokedex';
-//import Pokecard from './Pokecard';
+import React, { Component } from 'react';
+import Pokegame from './PokeGame';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Pokedex />
-    </div>
-  );
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<Pokegame />
+			</div>
+		);
+	}
 }
 
 export default App;

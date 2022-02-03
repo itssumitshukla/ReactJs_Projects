@@ -1,27 +1,32 @@
-import React, { Component } from 'react';
-import Pokecard from './Pokecard';
-import './Pokedex.css';
+import "./Pokedex.css";
+import React from "react";
+import Pokecard from "./Pokecard";
 
-class Pokedex extends Component {
-	render() {
-		let title;
-		if (this.props.isWinner) {
-			title = <h1 className="Pokedex-winner">Winning Hand</h1>;
-		} else {
-			title = <h1 className="Pokedex-loser">Losing Hand</h1>;
-		}
-		return (
-			<div className="Pokedex">
-				{title}
-				<h4>Total Experience: {this.props.exp}</h4>
-				<div className="Pokedex-cards">
-					{this.props.pokemon.map((p) => (
-						<Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
-					))}
-				</div>
-			</div>
-		);
-	}
+function Pokedex(props) {
+  let color = props.isWinner ? "limegreen" : "red";
+  return (
+    <div className="Pokedex">
+      <div className="winner-div">
+        <h1 style={{ color: color }} className="winner">
+          {props.isWinner ? "WINNER!" : "DEFEATED!"}
+        </h1>
+        <h5>Total Experience {props.exp}</h5>
+      </div>
+      {props.pokemon.map((item) => {
+        return (
+          <div className="Pokedex-cards">
+            <Pokecard
+              id={item.id}
+              name={item.name}
+              type={item.type}
+              exp={item.base_experience}
+              pokemon={props.pokemon}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Pokedex;
