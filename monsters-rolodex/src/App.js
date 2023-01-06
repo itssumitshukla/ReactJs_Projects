@@ -14,12 +14,15 @@ class App extends Component {
       monsters: [
         {
           name: "Linda",
+          id: "1",
         },
         {
           name: "Frank",
+          id: "2",
         },
         {
           name: "Jacky",
+          id: "3",
         },
       ],
     };
@@ -29,7 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.monsters.map((monster) => {
-          return <h1>{monster.name}</h1>;
+          return <h1 key={monster.id}>{monster.name}</h1>;
         })}
       </div>
     );
