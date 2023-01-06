@@ -17,9 +17,13 @@ class App extends Component {
 
   //Get list from api placeholder
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users").then((response) => {
-      console.log(response);
-    });
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) =>
+        this.setState(() => {
+          return { monsters: users };
+        })
+      );
   }
 
   render() {
