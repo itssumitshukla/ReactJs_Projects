@@ -34,7 +34,13 @@ class App extends Component {
           type="search"
           placeholder="Search Monsters"
           onChange={(e) => {
-            console.log(e);
+            console.log(e.target.value);
+            const filteredMonsters = this.state.monsters.filter((monster) => {
+              return monster.name.includes(e.target.value);
+            });
+            this.setState(() => {
+              return { monsters: filteredMonsters };
+            });
           }}
         />
         {this.state.monsters.map((monster) => {
