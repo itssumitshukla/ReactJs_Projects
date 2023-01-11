@@ -5,8 +5,8 @@ class Searcbox extends Component {
     return (
       <input
         //className="search-box"
-        type="search"
-        placeholder="Search Monsters"
+        type={this.props.className}
+        placeholder={this.props.placeholder}
         onChange={this.props.onChangeHandler}
       />
     );
