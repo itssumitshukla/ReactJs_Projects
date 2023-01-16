@@ -5,57 +5,62 @@ import CardList from "./component/card-list/card-list.component";
 import Searcbox from "./component/search-box/search-box.component.jsx";
 import "./App.css";
 
+//Testing function
+const App = () => {
+  return (
+    <div className="App">
+      <h1 className="app-title">Monsters Rolodex</h1>
+    </div>
+  );
+  //   <Searcbox className="monsters-search-box"
+  //   onChangeHandler={onSearchChange}
+  //   placeholder="search monsters"
+  // />
+  // <CardList monsters={filteredMonsters} />
+};
+
 //Testing Class
+// class App extends Component {
+//   //Local State
+//   constructor() {
+//     super();
 
-class App extends Component {
-  //Local State
-  constructor() {
-    super();
+//     this.state = {
+//       monsters: [],
+//       searchField: "",
+//     };
+//   }
 
-    this.state = {
-      monsters: [],
-      searchField: "",
-    };
-  }
+//Get list from api placeholder
+//   componentDidMount() {
+//     fetch("https://jsonplaceholder.typicode.com/users")
+//       .then((response) => response.json())
+//       .then((users) =>
+//         this.setState(() => {
+//           return { monsters: users };
+//         })
+//       );
+//   }
 
-  //Get list from api placeholder
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((users) =>
-        this.setState(() => {
-          return { monsters: users };
-        })
-      );
-  }
+//   onSearchChange = (e) => {
+//     const searchField = e.target.value.toLowerCase();
+//     this.setState(() => {
+//       return { searchField };
+//     });
+//   };
 
-  onSearchChange = (e) => {
-    const searchField = e.target.value.toLowerCase();
-    this.setState(() => {
-      return { searchField };
-    });
-  };
+//   render() {
+//     const { monsters, searchField } = this.state;
+//     const { onSearchChange } = this;
+//     const filteredMonsters = monsters.filter((monster) => {
+//       return monster.name.toLowerCase().includes(searchField);
+//     });
 
-  render() {
-    const { monsters, searchField } = this.state;
-    const { onSearchChange } = this;
-    const filteredMonsters = monsters.filter((monster) => {
-      return monster.name.toLowerCase().includes(searchField);
-    });
+//     return (
 
-    return (
-      <div className="App">
-        <h1 className="app-title">Monsters Rolodex</h1>
-        <Searcbox
-          className="monsters-search-box"
-          onChangeHandler={onSearchChange}
-          placeholder="search monsters"
-        />
-        <CardList monsters={filteredMonsters} />
-      </div>
-    );
-  }
-}
+//     );
+//   }
+// }
 
 //Testing Function ootb
 // function App() {
