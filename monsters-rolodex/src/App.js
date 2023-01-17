@@ -1,5 +1,5 @@
-import { Component } from "react";
-
+// import { Component } from "react";
+import { useState } from "react";
 //import logo from "./logo.svg";
 import CardList from "./component/card-list/card-list.component";
 import Searcbox from "./component/search-box/search-box.component.jsx";
@@ -7,18 +7,24 @@ import "./App.css";
 
 //Testing function
 const App = () => {
+  const onSearchChange = () => {
+    const searchField = e.target.value.toLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  };
   return (
     <div className="App">
       <h1 className="app-title">Monsters Rolodex</h1>
     </div>
-  );
-  //   <Searcbox className="monsters-search-box"
-  //   onChangeHandler={onSearchChange}
-  //   placeholder="search monsters"
-  // />
-  // <CardList monsters={filteredMonsters} />
-};
 
+    <Searcbox className="monsters-search-box"
+    onChangeHandler={onSearchChange}
+    placeholder="search monsters"
+  />
+  <CardList monsters={filteredMonsters} />
+};
+  );
 //Testing Class
 // class App extends Component {
 //   //Local State
