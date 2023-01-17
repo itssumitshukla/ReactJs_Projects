@@ -7,24 +7,24 @@ import "./App.css";
 
 //Testing function
 const App = () => {
-  const onSearchChange = () => {
-    const searchField = e.target.value.toLowerCase();
-    this.setState(() => {
-      return { searchField };
-    });
+  const [searchField, setSearchField] = useState("");
+  console.log({ searchField });
+  const onSearchChange = (e) => {
+    const searchFieldString = e.target.value.toLowerCase();
+    setSearchField(searchFieldString);
   };
   return (
     <div className="App">
       <h1 className="app-title">Monsters Rolodex</h1>
+      <Searcbox
+        className="monsters-search-box"
+        onChangeHandler={onSearchChange}
+        placeholder="search monsters"
+      />
+      <CardList monsters={filteredMonsters} />
     </div>
-
-    <Searcbox className="monsters-search-box"
-    onChangeHandler={onSearchChange}
-    placeholder="search monsters"
-  />
-  <CardList monsters={filteredMonsters} />
-};
   );
+};
 //Testing Class
 // class App extends Component {
 //   //Local State
