@@ -21,7 +21,9 @@ const App = () => {
         onChangeHandler={onSearchChange}
         placeholder="search monsters"
       />
+      {/*
       <CardList monsters={filteredMonsters} />
+  */}
     </div>
   );
 };
