@@ -7,6 +7,7 @@ import "./App.css";
 
 //Testing function
 const App = () => {
+  console.log("render");
   const [searchField, setSearchField] = useState("");
   console.log({ searchField });
   const onSearchChange = (e) => {
