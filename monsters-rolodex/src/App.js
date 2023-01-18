@@ -7,13 +7,19 @@ import "./App.css";
 
 //Testing function
 const App = () => {
-  console.log("render");
   const [searchField, setSearchField] = useState("");
+  const [monsters, setMonsters] = useState([]);
+
   console.log({ searchField });
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLowerCase();
     setSearchField(searchFieldString);
   };
+
+  const filteredMonsters = monsters.filter((monster) => {
+    return monster.name.toLowerCase().includes(searchField);
+  });
+
   return (
     <div className="App">
       <h1 className="app-title">Monsters Rolodex</h1>
@@ -22,9 +28,7 @@ const App = () => {
         onChangeHandler={onSearchChange}
         placeholder="search monsters"
       />
-      {/*
       <CardList monsters={filteredMonsters} />
-  */}
     </div>
   );
 };
