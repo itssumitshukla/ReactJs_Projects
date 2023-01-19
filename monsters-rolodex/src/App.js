@@ -1,5 +1,5 @@
 // import { Component } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //import logo from "./logo.svg";
 import CardList from "./component/card-list/card-list.component";
 import Searcbox from "./component/search-box/search-box.component.jsx";
@@ -9,6 +9,10 @@ import "./App.css";
 const App = () => {
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
+
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response) => response.json())
+    .then((users) => setMonsters(users));
 
   console.log({ searchField });
   const onSearchChange = (e) => {
