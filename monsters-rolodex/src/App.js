@@ -9,12 +9,21 @@ import "./App.css";
 const App = () => {
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
+  const [filteredMonsters, setFilteredMonsters] = useState(monsters);
   const [stringField, setStringField] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => setMonsters(users));
+  }, []);
+
+  useEffect(() => {
+    const newFilteredMOnsters = monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(searchField);
+    });
+
+    setFilteredMonsters(newFilteredMOnsters);
   }, []);
 
   const onSearchChange = (e) => {
@@ -25,10 +34,6 @@ const App = () => {
   const onStringChange = (e) => {
     setStringField(e.target.valie);
   };
-
-  const filteredMonsters = monsters.filter((monster) => {
-    return monster.name.toLowerCase().includes(searchField);
-  });
 
   return (
     <div className="App">
