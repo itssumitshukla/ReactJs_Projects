@@ -9,6 +9,7 @@ import "./App.css";
 const App = () => {
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
+  const [stringField, setStringField] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -16,10 +17,13 @@ const App = () => {
       .then((users) => setMonsters(users));
   }, []);
 
-  console.log({ searchField });
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLowerCase();
     setSearchField(searchFieldString);
+  };
+
+  const onStringChange = (e) => {
+    setStringField(e.target.valie);
   };
 
   const filteredMonsters = monsters.filter((monster) => {
@@ -33,6 +37,11 @@ const App = () => {
         className="monsters-search-box"
         onChangeHandler={onSearchChange}
         placeholder="search monsters"
+      />
+      <Searcbox
+        className="monsters-search-box"
+        onChangeHandler={onStringChange}
+        placeholder="set String"
       />
       <CardList monsters={filteredMonsters} />
     </div>
