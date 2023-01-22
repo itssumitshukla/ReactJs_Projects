@@ -16,11 +16,12 @@ const App = () => {
       .then((response) => response.json())
       .then((users) => setMonsters(users));
   }, []);
-
-  useEffect(() => {
-    const newFilteredMOnsters = monsters.filter((monster) => {
-      return monster.name.toLowerCase().includes(searchField);
-    });
+  
+  console.log(render)
+  // useEffect(() => {
+  //   const newFilteredMOnsters = monsters.filter((monster) => {
+  //     return monster.name.toLowerCase().includes(searchField);
+  //   });
 
     setFilteredMonsters(newFilteredMOnsters);
   }, []);
