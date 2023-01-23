@@ -1,4 +1,4 @@
-// import { Component } from "react";
+import { Component } from "react";
 import { useState, useEffect } from "react";
 //import logo from "./logo.svg";
 import CardList from "./component/card-list/card-list.component";
@@ -16,15 +16,13 @@ const App = () => {
       .then((response) => response.json())
       .then((users) => setMonsters(users));
   }, []);
-  
-  console.log(render)
-  // useEffect(() => {
-  //   const newFilteredMOnsters = monsters.filter((monster) => {
-  //     return monster.name.toLowerCase().includes(searchField);
-  //   });
 
-    setFilteredMonsters(newFilteredMOnsters);
-  }, []);
+  useEffect(() => {
+    const newFilteredMonsters = monsters.filter((monster) =>
+      monster.name.toLocaleLowerCase().includes(searchField)
+    );
+    setFilteredMonsters(newFilteredMonsters);
+  }, [monsters, searchField]);
 
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLowerCase();
@@ -43,6 +41,7 @@ const App = () => {
     </div>
   );
 };
+
 //Testing Class
 // class App extends Component {
 //   //Local State
