@@ -8,6 +8,7 @@ import "./App.css";
 //Testing function
 const App = () => {
   const [searchField, setSearchField] = useState("");
+  const [title, setTitle] = useState("");
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
@@ -28,12 +29,22 @@ const App = () => {
     const searchFieldString = e.target.value.toLowerCase();
     setSearchField(searchFieldString);
   };
+  const onTitleChange = (e) => {
+    const searchFieldString = e.target.value.toLowerCase();
+    setTitle(searchFieldString);
+  };
 
   return (
     <div className="App">
       <h1 className="app-title">Monsters Rolodex</h1>
       <Searcbox
         className="monsters-search-box"
+        onChangeHandler={onSearchChange}
+        placeholder="search monsters"
+      />
+      <br />
+      <Searcbox
+        className="title-search-box"
         onChangeHandler={onSearchChange}
         placeholder="search monsters"
       />
