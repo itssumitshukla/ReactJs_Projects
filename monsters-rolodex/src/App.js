@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="app-title">Monsters Rolodex</h1>
+      <h1 className="app-title">{title}</h1>
       <Searcbox
         className="monsters-search-box"
         onChangeHandler={onSearchChange}
@@ -45,8 +45,8 @@ const App = () => {
       <br />
       <Searcbox
         className="title-search-box"
-        onChangeHandler={onSearchChange}
-        placeholder="search monsters"
+        onChangeHandler={onTitleChange}
+        placeholder="set Title"
       />
       <CardList monsters={filteredMonsters} />
     </div>
