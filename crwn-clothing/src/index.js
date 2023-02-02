@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom/client";
-import App from "./yourpath";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
