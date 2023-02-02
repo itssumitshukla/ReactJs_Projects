@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { ReactDOM } from "react-dom/client'";
 
 import Home from "./routes/home/home.component.jsx";
 
