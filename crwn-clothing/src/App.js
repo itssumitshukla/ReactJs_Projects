@@ -6,6 +6,7 @@ import Navigation from "./routes/navigation/navigation.component";
 const App = () => {
   return (
     <Routes>
+      <Route path="/" element={<Navigation />} />
       <Route path="/" index element={<Home />} />
     </Routes>
   );
