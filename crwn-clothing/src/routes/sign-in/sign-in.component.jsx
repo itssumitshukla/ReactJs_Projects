@@ -10,6 +10,15 @@ const SignIn = () => {
     const userDocRef = await createUserDocumentFromAuth(user);
   };
 
+  const redirectGoogleResult = async () => {
+    const response = await getRedirectResult(auth);
+    console.log(response);
+  };
+
+  useEffect(() => {
+    redirectGoogleResult();
+  }, []);
+
   return (
     <div>
       <h1>Sign In Page</h1>
