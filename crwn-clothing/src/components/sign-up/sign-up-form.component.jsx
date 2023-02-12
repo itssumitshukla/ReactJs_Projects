@@ -1,6 +1,9 @@
 import { async } from "@firebase/util";
 import { useState } from "react";
-import { createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
 import "./sign-up-form.styles.scss";
 
@@ -29,7 +32,7 @@ const SignUpForm = () => {
         email,
         password
       );
-      console.log(response);
+      await createUserDocumentFromAuth(user, { displayName });
     } catch (error) {
       console.log(error + " user created and encounter an error");
     }
