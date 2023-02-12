@@ -32,9 +32,13 @@ const SignUpForm = () => {
         email,
         password
       );
-      await createUserDocumentFromAuth(user, { displayName });
+      await { displayName };
     } catch (error) {
-      console.log(error + " user created and encounter an error");
+      if (error.code === "auth/email-already-in-use") {
+        alert("Cannot create user,email already in use");
+      } else {
+        console.log(error + " user created and encounter an error");
+      }
     }
   };
 
@@ -65,8 +69,10 @@ const SignUpForm = () => {
         />
         <label>Password</label>
         <input
+          label="Password"
           type="password"
-          requiredonChange={handleChange}
+          required
+          onChange={handleChange}
           name="password"
           value={password}
         />
