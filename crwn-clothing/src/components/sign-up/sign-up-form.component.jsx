@@ -20,6 +20,10 @@ const SignUpForm = () => {
 
   console.log(formFields);
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
@@ -33,6 +37,7 @@ const SignUpForm = () => {
         password
       );
       await { displayName };
+      resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user,email already in use");
