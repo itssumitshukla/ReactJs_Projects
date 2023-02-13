@@ -4,8 +4,8 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-
 import "./sign-up-form.styles.scss";
+import FormInput from "../form-input/form-input.component";
 
 const defaultFormFields = {
   displayName: "",
@@ -57,7 +57,7 @@ const SignUpForm = () => {
       <h1>Sign up with your Email and Password</h1>
       <form onSubmit={handleSubmit}>
         <label>Display Name</label>
-        <input
+        <FormInput
           type="text"
           required
           onChange={handleChange}
@@ -65,7 +65,7 @@ const SignUpForm = () => {
           value={displayName}
         />
         <label>Email</label>
-        <input
+        <FormInput
           type="email"
           required
           onChange={handleChange}
@@ -73,7 +73,7 @@ const SignUpForm = () => {
           value={email}
         />
         <label>Password</label>
-        <input
+        <FormInput
           label="Password"
           type="password"
           required
@@ -82,7 +82,7 @@ const SignUpForm = () => {
           value={password}
         />
         <label>Confirm Password</label>
-        <input
+        <FormInput
           required
           onChange={handleChange}
           name="confirmPassword"
