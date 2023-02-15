@@ -19,8 +19,6 @@ const SigninForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -38,7 +36,20 @@ const SigninForm = () => {
         password
       );
       resetFormFields();
-    } catch (error) {}
+    } catch (error) {
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("Incorrect password for email");
+          break;
+        case "auth/user-not-found":
+          alert("NO USER FOUND");
+          break;
+        default:
+          console.log("ERROR from try Catch" + error);
+          break;
+      }
+      console.log(error);
+    }
   };
 
   const handleChange = (event) => {
