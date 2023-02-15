@@ -39,15 +39,6 @@ const SigninForm = () => {
       <span>Sign up with your Email and Password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          label="Display Name"
-          type="text"
-          required
-          onChange={handleChange}
-          name="displayName"
-          value={displayName}
-        />
-
-        <FormInput
           label="Email"
           type="email"
           required
@@ -64,19 +55,10 @@ const SigninForm = () => {
           name="password"
           value={password}
         />
-
-        <FormInput
-          label="Confirm Password"
-          type="password"
-          required
-          onChange={handleChange}
-          name="confirmPassword"
-          value={confirmPassword}
-        />
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit">Sign In</Button>
       </form>
     </div>
   );
 };
 
-export default SignInForm;
+export default SigninForm;
