@@ -19,12 +19,12 @@ const Navigation = () => {
             SHOP
           </Link>
           {currentUser ? (
-              <span className="nav-link">SIGN OUT</span>)
-              : (<Link className="nav-link" to="/auth"></Link>
-          <Link className="nav-link" to="/auth">
-            SIGN IN
-          </Link>
-  )}
+            <span className="nav-link">SIGN OUT</span>
+          ) : (
+            <Link className="nav-link" to="/auth">
+              SIGN IN
+            </Link>
+          )}
         </div>
       </div>
       <Outlet />
