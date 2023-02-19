@@ -13,3 +13,8 @@ export const UserProvider = ({ children }) => {
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
+
+//Actual component
+export const onAuthStateChanged = (e) => {
+  return console.log(e);
+};
