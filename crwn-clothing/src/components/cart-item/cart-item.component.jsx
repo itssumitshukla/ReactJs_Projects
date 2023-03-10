@@ -1,7 +1,7 @@
 import "./cart-item.styles.scss";
 
 const CartItem = (cartItem) => {
-  return console.log("Cart item");
+  return <div className="cart-item-container"></div>;
 };
 
 export default CartItem;
