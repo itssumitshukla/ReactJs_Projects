@@ -18,9 +18,10 @@ export const addCartItem = (cartItems, productToAdd) => {
 
 export const CartContext = createContext({
   isCartOpen: false,
-  setIsCartOpen: () => {},
+  setIsOpen: () => {},
+  cartItems: [],
+  addItemToCart: () => {},
 });
-
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const value = { isCartOpen, setIsCartOpen };
