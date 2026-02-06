@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import Contact from "./component/Contact";
+import Header from "./component/Header";
 
 import "./App.css";
 
@@ -12,6 +13,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <h1>
+          <Header branding="Contact Manager" />
           <Contact />
         </h1>
       </header>
