@@ -11,15 +11,14 @@ import "./App.css";
 
 function App() {
   return (
-    <Navbar>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </div>
-    </Navbar>
+    <div className="app">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </div>
   );
 }
 
