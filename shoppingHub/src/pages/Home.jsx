@@ -7,7 +7,9 @@ export default function Home() {
           Discover amazing products at great prices
         </p>
       </div>
-      <div className="container"></div>
+      <div className="container">
+        <h2 className="page-title">Our Products</h2>
+      </div>
     </div>
   );
 }
