@@ -1,3 +1,4 @@
+import ProductCard from "../components/ProductCard";
 import { getProducts } from "../data/products";
 
 export default function Home() {
