@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <AuthContext.Provider>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
-      </AuthContext.Provider>
+      </AuthProvider>
     </div>
   );
 }
