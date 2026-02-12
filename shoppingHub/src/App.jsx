@@ -5,22 +5,22 @@ import Checkout from "./pages/Checkout";
 import Navbar from "./components/Navbar";
 
 import "./App.css";
-import AuthProvider from "./context/AuthContext";
+//import AuthProvider from "./context/AuthContext";
 // import ProductDetails from "./pages/ProductDetails";
 // import CartProvider from "./context/CartContext";
 
 function App() {
   return (
+    //<AuthProvider>
     <div className="app">
       <Navbar />
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </AuthProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
     </div>
+    //</AuthProvider>
   );
 }
 
