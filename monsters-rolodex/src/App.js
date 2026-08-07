@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     const newFilteredMonsters = monsters.filter((monster) =>
-      monster.name.toLocaleLowerCase().includes(searchField)
+      monster.name.toLocaleLowerCase().includes(searchField),
     );
     setFilteredMonsters(newFilteredMonsters);
   }, [monsters, searchField]);
