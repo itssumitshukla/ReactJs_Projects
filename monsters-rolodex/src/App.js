@@ -32,6 +32,7 @@ const App = () => {
   const onTitleChange = (e) => {
     const searchFieldString = e.target.value.toLowerCase();
     setTitle(searchFieldString);
+    console.log(searchFieldString);
   };
 
   return (
