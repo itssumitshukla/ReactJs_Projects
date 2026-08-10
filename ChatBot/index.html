@@ -21,21 +21,6 @@
       }
 
       function ChatMessage({ message, sender }) {
-        // const message = props.message;
-        // const sender = props.sender;
-        // const { message, sender } = props;
-
-        /*
-          if (sender === 'robot') {
-            return (
-              <div>
-                <img src="robot.png" width="50" />
-                {message}
-              </div>
-            );
-          }
-          */
-
         return (
           <div>
             {sender === "robot" && <img src="robot.png" width="50" />}
@@ -46,7 +31,7 @@
       }
 
       function ChatMessages() {
-        const chatMessage = [
+        const array = React.useState([
           {
             message: "hello chatbot",
             sender: "user",
@@ -67,9 +52,22 @@
             sender: "robot",
             id: "id4",
           },
-        ];
+        ]);
+        array[0];
+
+        function sendMessage() {
+          chatMessage.push({
+            message: "test",
+            sender: "user",
+            id: crypto.randomUUID(),
+          });
+
+          console.log(chatMessage);
+        }
+
         return (
           <>
+            <button onClick={sendMessage}>Send Message</button>
             <ChatInput />
             {chatMessage.map((chatMessage) => {
               return (
