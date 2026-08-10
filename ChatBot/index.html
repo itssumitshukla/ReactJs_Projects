@@ -46,6 +46,16 @@
       }
 
       function App() {
+        const ChatMessage = [{
+            message: 'hello chatbot';
+            sender: 'user'
+        },{
+            message: 'Hello! How can I help you?';
+            sender: 'robot'
+        },{
+            message: 'can you get me todays date?';
+            sender: 'user'
+        }];
         return (
           <>
             <ChatInput />
