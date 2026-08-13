@@ -3,8 +3,10 @@
   <head>
     <title>Chatbot</title>
     <style>
-      button {
+      .send-button {
         background-color: green;
+        color: white;
+        padding: 12px 20px;
       }
     </style>
   </head>
@@ -58,7 +60,9 @@
               onChange={saveInputText}
               value={inputText}
             />
-            <button onClick={sendMessage}>Send</button>
+            <button onClick={sendMessage} className="send-button">
+              Send
+            </button>
           </>
         );
       }
