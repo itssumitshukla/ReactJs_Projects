@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Chatbot } from 'supersimpledev'
+import RobotProfileImage from './assets/react.svg'
+import UserProfileImage from './assets/user.png'
 import './App.css'
 
       function ChatInput({ chatMessages, setChatMessages }) {
