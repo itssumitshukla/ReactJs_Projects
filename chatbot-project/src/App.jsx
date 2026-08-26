@@ -5,15 +5,6 @@ import UserProfileImage from './assets/user.png'
 import './App.css'
 
 
-      function ChatMessage({ message, sender }) {
-        return (
-          <div>
-            {sender === "robot" && <img src={RobotProfileImage} width="50" />}
-            {message}
-            {sender === "user" && <img src={UserProfileImage} width="50" />}
-          </div>
-        );
-      }
 
       function ChatMessages({ chatMessages }) {
         return (
