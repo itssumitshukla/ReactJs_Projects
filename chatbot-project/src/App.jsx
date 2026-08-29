@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { ChatInput } from './components/ChatInput'
-import RobotProfileImage from './assets/react.svg'
-import UserProfileImage from './assets/user.png'
 import './App.css'
 
 
@@ -57,4 +55,4 @@ function App() {
         );
       }
 
-export default App
+export default App;
