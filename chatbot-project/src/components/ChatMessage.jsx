@@ -1,5 +1,6 @@
 import RobotProfileImage from '../assets/react.svg'
 import UserProfileImage from '../assets/user.png'
+import './ChatMessage.css';
 
   export function ChatMessage({ message, sender }) {
         return (
