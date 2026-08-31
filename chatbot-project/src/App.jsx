@@ -1,24 +1,8 @@
 import { useState } from 'react'
 import { ChatInput } from './components/ChatInput'
+import ChatMessages from './components/ChatMessages';
 import './App.css'
 
-
-
-      function ChatMessages({ chatMessages }) {
-        return (
-          <>
-            {chatMessages.map((chatMessage) => {
-              return (
-                <ChatMessage
-                  message={chatMessage.message}
-                  sender={chatMessage.sender}
-                  key={chatMessage.id}
-                />
-              );
-            })}
-          </>
-        );
-      }
 
 function App() {
         const [chatMessages, setChatMessages] = useState([
