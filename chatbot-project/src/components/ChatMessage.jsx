@@ -2,7 +2,7 @@ import RobotProfileImage from '../assets/robot.png';
 import UserProfileImage from '../assets/user.png';
 import './ChatMessage.css';
 
-export default function ChatMessage({ message, sender }) {
+function ChatMessage({ message, sender }) {
 
   return (
     <div className={
@@ -22,3 +22,5 @@ export default function ChatMessage({ message, sender }) {
     </div>
   );
 }
+
+export default ChatMessage
