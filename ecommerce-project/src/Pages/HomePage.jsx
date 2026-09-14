@@ -1,4 +1,4 @@
-function Homepage(){
+export function Homepage(){
     return(
         <>
         <div className="header">
