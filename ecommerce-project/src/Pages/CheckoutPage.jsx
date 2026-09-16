@@ -1,4 +1,4 @@
-function CheckoutPage() {
+export function CheckoutPage() {
   return (
     <>
       <div className="checkout-header">
