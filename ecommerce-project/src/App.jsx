@@ -5,8 +5,8 @@ import './App.css'
 function App() {
    return (
     <Routes>
-      <Route>
-        
+      <Route path='/' element={<Homepage />}>
+
       </Route>
     </Routes>
   )
