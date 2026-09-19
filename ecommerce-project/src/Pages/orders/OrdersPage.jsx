@@ -1,10 +1,10 @@
-function OrdersPage(){
+export function OrdersPage(){
     return(
         <>
-            <div class="header">
+            <div className="header">
 
             </div>
-            <div class="orders-page">
+            <div className="orders-page">
 
             </div>
         </>
