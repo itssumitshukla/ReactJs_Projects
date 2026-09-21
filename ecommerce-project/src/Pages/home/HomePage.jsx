@@ -20,7 +20,7 @@ export function HomePage({ cart }) {
     <>
       <title>Ecommerce Project</title>
 
-      <Header cart={cart} />
+      <Header cart={cart.description} />
 
       <div className="home-page">
         <ProductsGrid products={products} />
