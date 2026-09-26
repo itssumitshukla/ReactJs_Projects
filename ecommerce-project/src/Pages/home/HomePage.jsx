@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import { ProductsGrid } from './ProductsGrid';
+import {  } from './ProductsGrid';
 import './HomePage.css';
 
 export function HomePage({ cart, loadCart }) {
