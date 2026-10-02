@@ -8,7 +8,7 @@ import { HomePage } from "./HomePage";
 vi.mock("axios");
 
 describe("HomePage component", () => {
-  //let loadCart;
+  let loadCart;
 
   beforeEach(() => {
     loadCart = vi.fn();
