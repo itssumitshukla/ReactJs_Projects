@@ -1,3 +1,5 @@
 export default function App(){
-  return <h1>Test</h1>
+            <div className="app-container">
+              Test 1
+          </div>
 }
