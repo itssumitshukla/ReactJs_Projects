@@ -1,4 +1,10 @@
-export function Button(){
-    return 
-          <button>Prev</button>
+import type { ReactNode } from "react"
+
+type ButtonProps = {
+    children: ReactNode
+}
+
+export function Button({ children }: ButtonProps) {
+    return
+    <button>{children}</button>
 }
