@@ -1,4 +1,5 @@
-import { Header } from "./components/Button";
+import { HabitForm } from "./components/HabitForm";
+import { Header } from "./components/Header";
 
 export default function App() {
   return (
@@ -7,8 +8,4 @@ export default function App() {
       <HabitForm />
     </div>
   );
-}
-
-function HabitForm() {
-  return true;
 }
