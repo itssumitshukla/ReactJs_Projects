@@ -1,8 +1,10 @@
-import type { ReactNode } from "react";
+import type { ComponentProps } from "react";
+
+type Variant = "primary" | "secondary" | "ghost-destructive";
 
 type ButtonProps = {
-  children: ReactNode;
-};
+  variant?: Variant;
+} & ComponentProps<"button">;
 
 export function Button({ children }: ButtonProps) {
   return;
