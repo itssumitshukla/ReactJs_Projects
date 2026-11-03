@@ -27,6 +27,10 @@ export function HabitList() {
   );
 }
 
-function HabitItem({ habit }) {
+type HabitItemProps = {
+  habit: { id: string; name: string };
+};
+
+function HabitItem({ habit }: HabitItemProps) {
   return <h1>Hi</h1>;
 }
