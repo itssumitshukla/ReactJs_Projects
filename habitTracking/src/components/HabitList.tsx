@@ -1,7 +1,15 @@
-import { Button } from "./Button";
-const habits = ["test", "testing"];
-
 export function HabitList() {
+  const habits = [
+    {
+      id: 1,
+      name: "hi",
+    },
+    {
+      id: 2,
+      name: "Bye",
+    },
+  ];
+
   if (habits.length === 0) {
     return (
       <p className="text-center text-zinc-500 py-12">
@@ -13,7 +21,7 @@ export function HabitList() {
   return (
     <div className="flex flex-col gap-3">
       {habits.map((habit) => {
-        return <h1>{habit}</h1>;
+        return <h1 key={habit.id}>{habit.name}</h1>;
       })}
     </div>
   );
