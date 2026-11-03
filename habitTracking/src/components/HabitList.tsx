@@ -21,8 +21,12 @@ export function HabitList() {
   return (
     <div className="flex flex-col gap-3">
       {habits.map((habit) => {
-        return <h1 key={habit.id}>{habit.name}</h1>;
+        return <HabitItem key={habit.id} habit={habit} />;
       })}
     </div>
   );
+}
+
+function HabitItem({ habit }) {
+  return <h1>Hi</h1>;
 }
