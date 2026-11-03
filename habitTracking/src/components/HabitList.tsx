@@ -1,11 +1,11 @@
 export function HabitList() {
   const habits = [
     {
-      id: 1,
+      id: "asf",
       name: "hi",
     },
     {
-      id: 2,
+      id: "ewt",
       name: "Bye",
     },
   ];
